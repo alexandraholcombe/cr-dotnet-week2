@@ -14,6 +14,8 @@ namespace SonOfCod.Models
         {
         }
 
+        public DbSet<Subscriber> Subscribers { get; set; }
+
         public SOCContext(DbContextOptions options) : base(options)
         {
 
