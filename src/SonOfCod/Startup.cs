@@ -39,6 +39,8 @@ namespace SonOfCod
 
         public void Configure(IApplicationBuilder app)
         {
+            app.UseStaticFiles();
+
             app.UseIdentity();
             app.UseMvc(routes =>
             {
