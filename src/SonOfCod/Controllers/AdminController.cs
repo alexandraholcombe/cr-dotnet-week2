@@ -103,5 +103,12 @@ namespace SonOfCod.Controllers
             _db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        [HttpPost]
+        public async Task<IActionResult> LogOff()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("Index", "Home");
+        }
     }
 }
