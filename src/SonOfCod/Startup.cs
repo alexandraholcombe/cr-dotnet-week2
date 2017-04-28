@@ -32,7 +32,7 @@ namespace SonOfCod
             services.AddEntityFramework()
                 .AddDbContext<SOCContext>(options =>
                     options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));
-            services.AddIdentity<ApplicationUser, IdentityRole>()
+            services.AddIdentity<Admin, IdentityRole>()
                 .AddEntityFrameworkStores<SOCContext>()
                 .AddDefaultTokenProviders();
         }

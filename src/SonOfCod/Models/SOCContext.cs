@@ -8,7 +8,7 @@ using SonOfCod.Models;
 
 namespace SonOfCod.Models
 {
-    public class SOCContext : IdentityDbContext<ApplicationUser>
+    public class SOCContext : IdentityDbContext<Admin>
     {
         public SOCContext()
         {

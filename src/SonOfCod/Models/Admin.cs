@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SonOfCod.Models
 {
-    public class ApplicationUser : IdentityUser
+    public class Admin : IdentityUser
     {
     }
 }
