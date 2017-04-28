@@ -215,12 +215,12 @@ C:\Users\Alexandra\Documents\Visual Studio 2015\Projects\SonOfCod\src\SonOfCod\S
 C:\Users\Alexandra\Documents\Visual Studio 2015\Projects\SonOfCod\src\SonOfCod\Controllers\AdminController.cs
 C:\Users\Alexandra\Documents\Visual Studio 2015\Projects\SonOfCod\src\SonOfCod\Controllers\HomeController.cs
 C:\Users\Alexandra\Documents\Visual Studio 2015\Projects\SonOfCod\src\SonOfCod\Controllers\NewsletterController.cs
-C:\Users\Alexandra\Documents\Visual Studio 2015\Projects\SonOfCod\src\SonOfCod\Migrations\20170428170640_Initial.cs
-C:\Users\Alexandra\Documents\Visual Studio 2015\Projects\SonOfCod\src\SonOfCod\Migrations\20170428170640_Initial.Designer.cs
-C:\Users\Alexandra\Documents\Visual Studio 2015\Projects\SonOfCod\src\SonOfCod\Migrations\20170428191832_Subscribers.cs
-C:\Users\Alexandra\Documents\Visual Studio 2015\Projects\SonOfCod\src\SonOfCod\Migrations\20170428191832_Subscribers.Designer.cs
+C:\Users\Alexandra\Documents\Visual Studio 2015\Projects\SonOfCod\src\SonOfCod\Migrations\20170428220340_Initial.cs
+C:\Users\Alexandra\Documents\Visual Studio 2015\Projects\SonOfCod\src\SonOfCod\Migrations\20170428220340_Initial.Designer.cs
 C:\Users\Alexandra\Documents\Visual Studio 2015\Projects\SonOfCod\src\SonOfCod\Migrations\SOCContextModelSnapshot.cs
 C:\Users\Alexandra\Documents\Visual Studio 2015\Projects\SonOfCod\src\SonOfCod\Models\Admin.cs
+C:\Users\Alexandra\Documents\Visual Studio 2015\Projects\SonOfCod\src\SonOfCod\Models\Content.cs
+C:\Users\Alexandra\Documents\Visual Studio 2015\Projects\SonOfCod\src\SonOfCod\Models\ContentExtensions.cs
 C:\Users\Alexandra\Documents\Visual Studio 2015\Projects\SonOfCod\src\SonOfCod\Models\SOCContext.cs
 C:\Users\Alexandra\Documents\Visual Studio 2015\Projects\SonOfCod\src\SonOfCod\Models\Subscriber.cs
 C:\Users\Alexandra\Documents\Visual Studio 2015\Projects\SonOfCod\src\SonOfCod\ViewModels\LoginViewModel.cs

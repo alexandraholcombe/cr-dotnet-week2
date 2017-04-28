@@ -39,6 +39,13 @@ namespace SonOfCod
 
         public void Configure(IApplicationBuilder app)
         {
+            var context = app.ApplicationServices.GetService<SOCContext>();
+
+            using (var serviceScope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
+                {
+                    serviceScope.ServiceProvider.GetService<SOCContext>().EnsureSeedData();
+                }
+
             app.UseStaticFiles();
 
             app.UseIdentity();
@@ -49,9 +56,9 @@ namespace SonOfCod
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
 
-            app.Run(async (context) =>
+            app.Run(async (appContext) =>
             {
-                await context.Response.WriteAsync("Hello World!");
+                await appContext.Response.WriteAsync("Hello World!");
             });
         }
     }

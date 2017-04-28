@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-
-// For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+using SonOfCod.Models;
 
 namespace SonOfCod.Controllers
 {
     public class HomeController : Controller
     {
-        // GET: /<controller>/
+        private readonly SOCContext _db = new SOCContext();
+
         public IActionResult Index()
         {
+            ViewBag.FunBlurb = _db.Content.FirstOrDefault(blurb => blurb.Id == 1);
             return View();
         }
     }

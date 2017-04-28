@@ -1,6 +1,16 @@
-﻿@{
+﻿@model IEnumerable<SonOfCod.Models.Content>
+
+@{
     ViewData["Title"] = "Son Of Cod Seafood";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
 }
 
-Home
+<div class="jumbotron header">
+
+</div>
+
+<div class="jumbotron fun-blurb">
+    <h2>@ViewBag.FunBlurb.Title</h2>
+    <p>@ViewBag.FunBlurb.Text</p>
+    @*@Html.ActionLink((string) ViewBag.FunBlurb.ClickText, (string) ViewBag.FunBlurb.ClickView, (string) ViewBag.FunBlurb.ClickController, new { @class = "btn btn-primary" })*@
+</div>

@@ -172,6 +172,30 @@ namespace SonOfCod.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
+            modelBuilder.Entity("SonOfCod.Models.Content", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("ClickController");
+
+                    b.Property<string>("ClickText");
+
+                    b.Property<string>("ClickView");
+
+                    b.Property<string>("Tagline")
+                        .HasColumnType("varchar(MAX)");
+
+                    b.Property<string>("Text")
+                        .HasColumnType("varchar(MAX)");
+
+                    b.Property<string>("Title");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Content");
+                });
+
             modelBuilder.Entity("SonOfCod.Models.Subscriber", b =>
                 {
                     b.Property<int>("Id")
