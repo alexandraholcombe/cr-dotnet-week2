@@ -34,5 +34,20 @@ namespace SonOfCod.Controllers
         {
             return View();
         }
+
+        public IActionResult Delete(int id)
+        {
+            var thisSubscriber = _db.Subscribers.FirstOrDefault(s => s.Id == id);
+            return View(thisSubscriber);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        public IActionResult DeleteConfirmed(int id)
+        {
+            var thisSubscriber = _db.Subscribers.FirstOrDefault(s => s.Id == id);
+            _db.Subscribers.Remove(thisSubscriber);
+            _db.SaveChanges();
+            return RedirectToAction("Subscribe");
+        }
     }
 }
