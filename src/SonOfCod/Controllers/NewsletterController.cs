@@ -18,6 +18,7 @@ namespace SonOfCod.Controllers
 
         public IActionResult Subscribe()
         {
+            ViewBag.Subscribers = _db.Subscribers.ToList();
             return View();
         }
 
@@ -26,7 +27,12 @@ namespace SonOfCod.Controllers
         {
             _db.Subscribers.Add(subscriber);
             _db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Success");
+        }
+
+        public IActionResult Success()
+        {
+            return View();
         }
     }
 }
