@@ -13,7 +13,9 @@ namespace SonOfCod.Controllers
 
         public IActionResult Index()
         {
-            ViewBag.FunBlurb = _db.Content.FirstOrDefault(blurb => blurb.Id == 1);
+            var funblurb = _db.Content.FirstOrDefault(blurb => blurb.Type == "funblurb");
+            ViewBag.Thing = "thing";
+            ViewBag.FunBlurb = funblurb;
             return View();
         }
     }

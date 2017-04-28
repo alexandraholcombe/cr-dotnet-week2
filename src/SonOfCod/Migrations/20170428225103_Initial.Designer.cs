@@ -8,7 +8,7 @@ using SonOfCod.Models;
 namespace SonOfCod.Migrations
 {
     [DbContext(typeof(SOCContext))]
-    [Migration("20170428220340_Initial")]
+    [Migration("20170428225103_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -191,6 +191,9 @@ namespace SonOfCod.Migrations
                         .HasColumnType("varchar(MAX)");
 
                     b.Property<string>("Title");
+
+                    b.Property<string>("Type")
+                        .IsRequired();
 
                     b.HasKey("Id");
 

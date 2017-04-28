@@ -12,6 +12,8 @@ namespace SonOfCod.Models
         [Key]
         public int Id { get; set; }
 
+        [Required]
+        public string Type { get; set; }
         public string Title { get; set; }
 
         [Column(TypeName = "varchar(MAX)")]

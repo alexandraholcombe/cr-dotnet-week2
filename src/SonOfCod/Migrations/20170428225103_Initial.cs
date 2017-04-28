@@ -73,7 +73,8 @@ namespace SonOfCod.Migrations
                     ClickView = table.Column<string>(nullable: true),
                     Tagline = table.Column<string>(type: "varchar(MAX)", nullable: true),
                     Text = table.Column<string>(type: "varchar(MAX)", nullable: true),
-                    Title = table.Column<string>(nullable: true)
+                    Title = table.Column<string>(nullable: true),
+                    Type = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {

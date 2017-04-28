@@ -37,14 +37,10 @@ namespace SonOfCod
                 .AddDefaultTokenProviders();
         }
 
-        public void Configure(IApplicationBuilder app)
+        public void Configure(IApplicationBuilder app, SOCContext context)
         {
-            var context = app.ApplicationServices.GetService<SOCContext>();
 
-            using (var serviceScope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
-                {
-                    serviceScope.ServiceProvider.GetService<SOCContext>().EnsureSeedData();
-                }
+            var newContext = app.ApplicationServices.GetService<SOCContext>();
 
             app.UseStaticFiles();
 
@@ -60,6 +56,22 @@ namespace SonOfCod
             {
                 await appContext.Response.WriteAsync("Hello World!");
             });
+
+            DbContextExtensions.Seed(app);
         }
+
+        //private static void AddTestData(SOCContext context)
+        //{
+        //    var funBlurb = new Models.Content
+        //    {
+        //        Title = "World's Best Seafood",
+        //        Type = "funblurb",
+        //        Text = "We expect ourselves to do business right, to lead by example and to help out when we are needed. It is our company philosophy that guides our everyday decisions. It is good to be responsible, not just because it is the right thing to do, but because it also sets the bar for our company’s commitment to ensure that the communities in which we work and live will continue to prosper.",
+        //    };
+
+        //    context.Content.Add(funBlurb);
+
+        //    context.SaveChanges();
+        //}
     }
 }

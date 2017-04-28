@@ -191,6 +191,9 @@ namespace SonOfCod.Migrations
 
                     b.Property<string>("Title");
 
+                    b.Property<string>("Type")
+                        .IsRequired();
+
                     b.HasKey("Id");
 
                     b.ToTable("Content");
