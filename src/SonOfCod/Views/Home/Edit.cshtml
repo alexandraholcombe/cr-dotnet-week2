@@ -1,5 +1,43 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model SonOfCod.Models.Content
 @{
+    ViewData["Title"] = "I";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+<h2>Edit</h2>
+<hr />
+<h4>Edit this excerpt:</h4>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.Id)
+    @Html.HiddenFor(model => model.Type)
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Title)
+        @Html.TextBoxFor(model => model.Title, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Text)
+        @Html.TextBoxFor(model => model.Text, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.Label("Button Text")
+        @Html.TextBoxFor(model => model.ClickText, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.Label("Button View")
+        @Html.TextBoxFor(model => model.ClickView, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.Label("Button Controller")
+        @Html.TextBoxFor(model => model.ClickController, new { @class = "form-control" })
+    </div>
+
+    <input type="submit" value="Save Changes" class="btn btn-primary" />
+}
+<p>@Html.ActionLink("Back to Home", "Index")</p>

@@ -9,15 +9,22 @@
 
 </div>
 
-<div class="jumbotron">
+<div class="jumbotron fun-blurb">
     <div class="fun-blurb container">
         <h2>@ViewBag.FunBlurb.Title</h2>
         <p>@ViewBag.FunBlurb.Text</p>
         @Html.ActionLink((string)ViewBag.FunBlurb.ClickText, (string)ViewBag.FunBlurb.ClickView, (string)ViewBag.FunBlurb.ClickController, null, new { @class = "btn btn-primary" })
-    </div>
 
-@if (User.Identity.IsAuthenticated)
-{
-    @Html.ActionLink("Edit This", "Edit", "Home", new { id = ViewBag.FunBlurb.Id }, new { @class = "btn btn-primary" })
-}
+        @if (User.Identity.IsAuthenticated)
+        {
+            @Html.ActionLink("Edit This", "Edit", "Home", new { id = ViewBag.FunBlurb.Id }, new { @class = "edit-link" })
+        }
+    </div>
+</div>
+
+<div class="jumbotron newsletter">
+    <div class="newsletter container">
+        <h2>Join Our Newsletter</h2>
+        @Html.ActionLink("Subscribe", "Subscribe", "Newsletter", null, new { @class = "btn btn-primary" })
+    </div>
 </div>

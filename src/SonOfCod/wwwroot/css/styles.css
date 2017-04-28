@@ -75,10 +75,11 @@ body {
     margin-bottom: 0;
 }
 
-.fun-blurb.container {
+.fun-blurb.container, .newsletter.container {
     text-align: center;
     font-family: "Montserrat", sans-serif;
     padding: 0;
+    position: relative;
 }
 
 .fun-blurb > h2 {
@@ -88,4 +89,14 @@ body {
 
 .fun-blurb > p {
     font-size: 14px;
+}
+
+.jumbotron.fun-blurb {
+    background-color: white;
+}
+
+.edit-link {
+    position: absolute;
+    right: 0;
+    display: block;
 }
