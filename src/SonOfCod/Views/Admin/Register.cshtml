@@ -11,16 +11,22 @@
 
 @using (Html.BeginForm("Register", "Admin", FormMethod.Post))
 {
+    <div class="form-group">
     @Html.LabelFor(m => m.Email)
-    @Html.TextBoxFor(m => m.Email)
+    @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+    </div>
 
-    @Html.LabelFor(m => m.Password)
-    @Html.TextBoxFor(m => m.Password)
+    <div class="form-group">
+        @Html.LabelFor(m => m.Password)
+        @Html.TextBoxFor(m => m.Password, new { @class = "form-control"})
+    </div>
 
-    @Html.LabelFor(m => m.ConfirmPassword)
-    @Html.TextBoxFor(m => m.ConfirmPassword)
+    <div class="form-group">
+        @Html.LabelFor(m => m.ConfirmPassword)
+        @Html.TextBoxFor(m => m.ConfirmPassword, new { @class = "form-control" })
+    </div>
 
-    <input type="submit" value="Register" />
+    <input type="submit" value="Register" class="btn btn-primary"/>
 }
 
 <p>Note: This page is purposely not protected from anonymous users to allow the initial creation of an administrator.</p>

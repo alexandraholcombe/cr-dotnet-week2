@@ -88,5 +88,20 @@ namespace SonOfCod.Controllers
             }
 
         }
+
+        public IActionResult Delete(string id)
+        {
+            var thisUser = _db.Users.FirstOrDefault(User => User.Id == id);
+            return View(thisUser);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        public IActionResult DeleteConfirmed(string id)
+        {
+            var thisUser = _db.Users.FirstOrDefault(User => User.Id == id);
+            _db.Users.Remove(thisUser);
+            _db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
