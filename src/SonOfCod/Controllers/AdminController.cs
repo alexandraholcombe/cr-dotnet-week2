@@ -1,8 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Identity;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using SonOfCod.Models;
 using SonOfCod.ViewModels;
-using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
+using System.Security.Principal;
 
 namespace SonOfCod.Controllers
 {
@@ -21,7 +26,15 @@ namespace SonOfCod.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            if (User.Identity.IsAuthenticated)
+            {
+                ViewBag.User = _db.Users.FirstOrDefault(users => users.UserName == User.Identity.Name);
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Login");
+            }
         }
 
         public IActionResult Login()
@@ -41,6 +54,39 @@ namespace SonOfCod.Controllers
             {
                 return View();
             }
+        }
+
+        public IActionResult Register()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Register(RegisterViewModel model)
+        {
+            var user = new Admin { UserName = model.Email, Email = model.Email };
+            IdentityResult result = await _userManager.CreateAsync(user, model.Password);
+            if (result.Succeeded)
+            {
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View();
+            }
+        }
+
+        public IActionResult Manage()
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                return View(_db.Users.ToList());
+            }
+            else
+            {
+                return RedirectToAction("Login");
+            }
+
         }
     }
 }

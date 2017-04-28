@@ -1,0 +1,27 @@
+﻿@model IEnumerable<SonOfCod.Models.Admin>
+
+@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Manage Admins</h2>
+@Html.ActionLink("Register New Admin", "Register")
+
+<h3>Current Admins</h3>
+
+<table class="table">
+
+    @foreach (var admin in Model)
+    {
+        <tr>
+            <td>
+                @admin.UserName
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = admin.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = admin.Id })
+            </td>
+        </tr>
+    }
+</table>
