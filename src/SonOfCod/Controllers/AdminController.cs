@@ -1,16 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-
-// For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Identity;
+using SonOfCod.Models;
 
 namespace SonOfCod.Controllers
 {
-    public class AdminController : Controller
+    public class AccountController : Controller
     {
-        // GET: /<controller>/
+        private readonly SOCContext _db;
+        private readonly UserManager<Admin> _userManager;
+        private readonly SignInManager<Admin> _signInManager;
+
+        public AccountController(UserManager<Admin> userManager, SignInManager<Admin> signInManager, SOCContext db)
+        {
+            _userManager = userManager;
+            _signInManager = signInManager;
+            _db = db;
+        }
+
         public IActionResult Index()
         {
             return View();
