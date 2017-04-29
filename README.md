@@ -4,7 +4,7 @@
 **By Alexandra Holcombe**  
 Webpage built with .NET Core using Entity Framework migrations, SQL Server, and Identity Authentication.  Individual project for Week 2 of Epicodus .NET module.
 
-_Go to route localhost.#/admin/register to create initial admin account_
+_Go to route localhost.#/admin/register to create initial admin account_  
 _Additional styling and features added post-deadline.  View branch before-due for one day product._
 
 ## Planning
